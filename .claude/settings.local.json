@@ -1,8 +1,0 @@
-{
-  "enabledMcpjsonServers": [
-    "filesystem",
-    "thinking",
-    "21st-dev",
-    "google-stitch"
-  ]
-}
