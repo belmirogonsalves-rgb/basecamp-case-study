@@ -6,37 +6,37 @@
   <title>Basecamp Explorer — A Kilowott Case Study</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
 
-  <!-- ============================================================
-       S01 HERO — Dark, full-viewport
-       ============================================================ -->
-  <section class="s-hero" id="hero">
-    <div class="hero-bg">
-      <img
-        src="assets/images/Svalbard feb2025-2.jpg"
-        alt="Svalbard aerial landscape"
-        class="hero-img"
-      >
-      <div class="hero-overlay"></div>
-    </div>
+  <!-- ── Fixed UI Chrome ───────────────────────────────────── -->
+  <div id="scroll-progress" aria-hidden="true"></div>
+  <div id="section-indicator" aria-hidden="true">
+    <span id="section-num">01</span>
+  </div>
+
+  <!-- ══════════════════════════════════════════════════════════
+       HERO — Full-viewport video
+  ══════════════════════════════════════════════════════════ -->
+  <section class="s-hero" id="hero" data-section="00">
+    <video autoplay muted loop playsinline class="section-video-bg">
+      <source src="assets/videos/hero-video.mp4" type="video/mp4">
+    </video>
+    <div class="hero-overlay"></div>
 
     <div class="hero-top">
       <img src="assets/kilowott-logo/kilowott-logo.png" alt="Kilowott" class="logo-kilowott">
-      <div class="hero-case-label">CASE STUDY</div>
+      <span class="hero-case-label">Case Study</span>
     </div>
 
-    <div class="hero-content">
+    <div class="hero-content" id="hero-content">
       <div class="hero-eyebrow hero-reveal">Basecamp Explorer · Svalbard, Norway</div>
       <div class="hero-rule hero-reveal"></div>
-      <h1 class="hero-headline hero-reveal">
-        Where the Arctic<br>Meets the World
-      </h1>
+      <h1 class="hero-headline hero-reveal">Where the Arctic<br>Meets the World</h1>
       <p class="hero-subline hero-reveal">
-        How Kilowott rebuilt Basecamp Explorer's digital presence — from a broken<br>
+        How Kilowott rebuilt Basecamp Explorer's digital presence — from a broken
         backend to an immersive Arctic brand experience.
       </p>
       <div class="hero-tags hero-reveal">
@@ -50,16 +50,29 @@
     </div>
   </section>
 
+  <!-- Marquee 1 → left -->
+  <div class="marquee-divider" data-direction="left">
+    <div class="marquee-track">
+      <span class="marquee-text">Arctic · Svalbard · Norway · Kilowott · Basecamp Explorer · </span>
+      <span class="marquee-text" aria-hidden="true">Arctic · Svalbard · Norway · Kilowott · Basecamp Explorer · </span>
+      <span class="marquee-text" aria-hidden="true">Arctic · Svalbard · Norway · Kilowott · Basecamp Explorer · </span>
+    </div>
+  </div>
 
-  <!-- ============================================================
-       S02 OVERVIEW — Light
-       ============================================================ -->
-  <section class="s-overview section-light" id="overview">
-    <div class="container">
-      <div class="section-counter reveal">
-        <span class="counter-num">01</span>
-        <span class="counter-lbl">/ Overview</span>
+  <!-- ══════════════════════════════════════════════════════════
+       S01 — OVERVIEW · Light
+  ══════════════════════════════════════════════════════════ -->
+  <section class="s-overview section-light transition-bottom-dark" id="overview" data-section="01">
+    <div class="section-sticky-bar section-sticky-bar--light">
+      <div class="container">
+        <div class="section-counter">
+          <span class="counter-num">01</span>
+          <span class="counter-sep">/</span>
+          <span class="counter-lbl">Overview</span>
+        </div>
       </div>
+    </div>
+    <div class="container section-pad">
       <div class="overview-grid">
         <div class="overview-text">
           <p class="reveal" data-delay="1">
@@ -95,7 +108,7 @@
               <dt>Platform</dt>
               <dd>WordPress (Custom Build)</dd>
             </div>
-            <div class="meta-row">
+            <div class="meta-row last">
               <dt>Year</dt>
               <dd>2025</dd>
             </div>
@@ -105,21 +118,39 @@
     </div>
   </section>
 
+  <!-- Marquee 2 → right -->
+  <div class="marquee-divider" data-direction="right">
+    <div class="marquee-track">
+      <span class="marquee-text">Arctic · Svalbard · Norway · Kilowott · Basecamp Explorer · </span>
+      <span class="marquee-text" aria-hidden="true">Arctic · Svalbard · Norway · Kilowott · Basecamp Explorer · </span>
+      <span class="marquee-text" aria-hidden="true">Arctic · Svalbard · Norway · Kilowott · Basecamp Explorer · </span>
+    </div>
+  </div>
 
-  <!-- ============================================================
-       S03 CLIENT PROFILE — Dark
-       ============================================================ -->
-  <section class="s-client section-dark" id="client">
-    <div class="container">
-      <div class="section-counter reveal">
-        <span class="counter-num">02</span>
-        <span class="counter-lbl">/ The Client</span>
+  <!-- ══════════════════════════════════════════════════════════
+       S02 — THE CLIENT · Dark
+  ══════════════════════════════════════════════════════════ -->
+  <section class="s-client section-dark" id="client" data-section="02">
+    <div class="section-sticky-bar section-sticky-bar--dark">
+      <div class="container">
+        <div class="section-counter">
+          <span class="counter-num">02</span>
+          <span class="counter-sep">/</span>
+          <span class="counter-lbl">The Client</span>
+        </div>
       </div>
+    </div>
+    <div class="container section-pad">
       <div class="client-grid">
+        <!-- Left column: logo → headline → paragraphs → stats -->
         <div class="client-content">
-          <img src="assets/basecamp-logo/image-3-2.png" alt="Basecamp Explorer" class="client-logo reveal">
-          <h2 class="display-heading reveal">
-            25 Years at the<br>Edge of the World
+          <img
+            src="assets/basecamp-logo/image-3-2.png"
+            alt="Basecamp Explorer"
+            style="max-height:60px; width:auto; display:block; margin-bottom:24px;"
+          >
+          <h2 class="display-heading js-word-split reveal">
+            25 Years at the Edge of the World
           </h2>
           <p class="reveal" data-delay="1">
             Basecamp Explorer operates at the edge of the world — running expeditions and
@@ -133,89 +164,128 @@
             around the full-package experience: accommodation, expedition, and guided
             journey as one seamless offering.
           </p>
-
-          <div class="property-cards reveal" data-delay="3">
-            <div class="property-card">
-              <span class="property-num">01</span>
-              <div class="property-text">
-                <h4>Isfjord Radio Adventure Hotel</h4>
-                <p>Remote wilderness, accessible only by snowmobile, boat, or helicopter.</p>
-              </div>
+          <div class="stats-row reveal" data-delay="3">
+            <div class="stat-tile">
+              <span class="stat-number" data-count="25" data-suffix="+">25+</span>
+              <span class="stat-label">Years of Arctic expertise</span>
             </div>
-            <div class="property-card">
-              <span class="property-num">02</span>
-              <div class="property-text">
-                <h4>Nordenskiöld Lodge</h4>
-                <p>Set beside the glacier — the most remote of the three properties.</p>
-              </div>
+            <div class="stat-tile">
+              <span class="stat-number" data-count="3">3</span>
+              <span class="stat-label">Iconic lodges &amp; properties</span>
             </div>
-            <div class="property-card">
-              <span class="property-num">03</span>
-              <div class="property-text">
-                <h4>Basecamp Hotel, Longyearbyen</h4>
-                <p>The urban base before and after expeditions into the wilderness.</p>
-              </div>
+            <div class="stat-tile">
+              <span class="stat-number">#1</span>
+              <span class="stat-label">Operator in Svalbard</span>
             </div>
-          </div>
-
-          <div class="client-tags reveal" data-delay="4">
-            <span class="tag">Arctic Expeditions</span>
-            <span class="tag">Sustainable Tourism</span>
-            <span class="tag">Premium Hospitality</span>
-            <span class="tag">Svalbard</span>
+            <div class="stat-tile">
+              <span class="stat-number" data-count="100" data-suffix="%">100%</span>
+              <span class="stat-label">Guided expeditions</span>
+            </div>
           </div>
         </div>
 
-        <div class="client-image reveal" data-delay="1">
-          <img
-            src="assets/images/basecamp-explorer-hotel-2.jpg"
-            alt="Basecamp Explorer lodge"
-          >
+        <!-- Right column: three tall portrait property cards -->
+        <div class="client-properties">
+          <div class="property-img-card reveal" data-delay="1"
+               style="background-image: url('assets/offerings/Isfjord-Radio-Adventure-hotel.jpg');">
+            <span class="card-title-vertical">Isfjord Radio Adventure Hotel</span>
+            <div class="card-description">
+              <p>Remote wilderness, accessible only by snowmobile, boat, or helicopter.</p>
+            </div>
+          </div>
+          <div class="property-img-card reveal" data-delay="2"
+               style="background-image: url('assets/offerings/nordenskiöld-lodge.jpg');">
+            <span class="card-title-vertical">Nordenskiöld Lodge</span>
+            <div class="card-description">
+              <p>Set beside the glacier — the most remote of the three properties.</p>
+            </div>
+          </div>
+          <div class="property-img-card reveal" data-delay="3"
+               style="background-image: url('assets/offerings/basecamp-hotel.jpg');">
+            <span class="card-title-vertical">Basecamp Hotel · Longyearbyen</span>
+            <div class="card-description">
+              <p>The urban base before and after expeditions into the wilderness.</p>
+            </div>
+          </div>
         </div>
       </div>
+    </div>
 
-      <div class="stats-row">
-        <div class="stat-tile reveal" data-delay="1">
-          <span class="stat-number" data-count="25" data-suffix="+">25+</span>
-          <span class="stat-label">Years of Arctic expertise</span>
+    <!-- Dual-row auto-scrolling carousel — full width -->
+    <div class="carousel-section">
+      <div class="carousel-row" data-carousel-dir="left" id="carousel-row-1">
+        <div class="carousel-track">
+          <!-- Set 1 -->
+          <div class="carousel-item odd"><img src="assets/images/230304%20base%20camp-2.jpg" alt="" draggable="false"></div>
+          <div class="carousel-item even"><img src="assets/images/Svalbard%20feb2025-5.jpg" alt="" draggable="false"></div>
+          <div class="carousel-item odd"><img src="assets/images/additional%20images/basecamp-add-4.jpg" alt="" draggable="false"></div>
+          <div class="carousel-item even"><img src="assets/images/additional%20images/basecamp-add-7.jpg" alt="" draggable="false"></div>
+          <div class="carousel-item odd"><img src="assets/images/additional%20images/basecamp-add-9.jpg" alt="" draggable="false"></div>
+          <div class="carousel-item even"><img src="assets/images/additional%20images/basecamp-add-11.jpg" alt="" draggable="false"></div>
+          <!-- Set 2 (duplicate) -->
+          <div class="carousel-item odd"><img src="assets/images/230304%20base%20camp-2.jpg" alt="" draggable="false"></div>
+          <div class="carousel-item even"><img src="assets/images/Svalbard%20feb2025-5.jpg" alt="" draggable="false"></div>
+          <div class="carousel-item odd"><img src="assets/images/additional%20images/basecamp-add-4.jpg" alt="" draggable="false"></div>
+          <div class="carousel-item even"><img src="assets/images/additional%20images/basecamp-add-7.jpg" alt="" draggable="false"></div>
+          <div class="carousel-item odd"><img src="assets/images/additional%20images/basecamp-add-9.jpg" alt="" draggable="false"></div>
+          <div class="carousel-item even"><img src="assets/images/additional%20images/basecamp-add-11.jpg" alt="" draggable="false"></div>
         </div>
-        <div class="stat-tile reveal" data-delay="2">
-          <span class="stat-number" data-count="3">3</span>
-          <span class="stat-label">Iconic lodges and properties</span>
-        </div>
-        <div class="stat-tile reveal" data-delay="3">
-          <span class="stat-number">#1</span>
-          <span class="stat-label">Operator in Svalbard</span>
-        </div>
-        <div class="stat-tile reveal" data-delay="4">
-          <span class="stat-number" data-count="100" data-suffix="%">100%</span>
-          <span class="stat-label">Guided expeditions (polar bear safety)</span>
+      </div>
+      <div class="carousel-row" data-carousel-dir="right" id="carousel-row-2">
+        <div class="carousel-track">
+          <!-- Set 1 -->
+          <div class="carousel-item odd"><img src="assets/images/230304%20base%20camp-14.jpg" alt="" draggable="false"></div>
+          <div class="carousel-item even"><img src="assets/images/Svalbard%20feb2025-6.jpg" alt="" draggable="false"></div>
+          <div class="carousel-item odd"><img src="assets/images/additional%20images/basecamp-add-3.jpg" alt="" draggable="false"></div>
+          <div class="carousel-item even"><img src="assets/images/additional%20images/basecamp-add-8.jpg" alt="" draggable="false"></div>
+          <div class="carousel-item odd"><img src="assets/images/additional%20images/basecamp-add-12.jpg" alt="" draggable="false"></div>
+          <!-- Set 2 (duplicate) -->
+          <div class="carousel-item odd"><img src="assets/images/230304%20base%20camp-14.jpg" alt="" draggable="false"></div>
+          <div class="carousel-item even"><img src="assets/images/Svalbard%20feb2025-6.jpg" alt="" draggable="false"></div>
+          <div class="carousel-item odd"><img src="assets/images/additional%20images/basecamp-add-3.jpg" alt="" draggable="false"></div>
+          <div class="carousel-item even"><img src="assets/images/additional%20images/basecamp-add-8.jpg" alt="" draggable="false"></div>
+          <div class="carousel-item odd"><img src="assets/images/additional%20images/basecamp-add-12.jpg" alt="" draggable="false"></div>
         </div>
       </div>
     </div>
   </section>
 
+  <!-- Marquee 3 → left -->
+  <div class="marquee-divider" data-direction="left">
+    <div class="marquee-track">
+      <span class="marquee-text">Arctic · Svalbard · Norway · Kilowott · Basecamp Explorer · </span>
+      <span class="marquee-text" aria-hidden="true">Arctic · Svalbard · Norway · Kilowott · Basecamp Explorer · </span>
+      <span class="marquee-text" aria-hidden="true">Arctic · Svalbard · Norway · Kilowott · Basecamp Explorer · </span>
+    </div>
+  </div>
 
-  <!-- ============================================================
-       S04 THE CHALLENGE — Light
-       ============================================================ -->
-  <section class="s-challenge section-bg-img" id="challenge" style="background-image: url('assets/images/230304 base camp-17.jpg');">
+  <!-- ══════════════════════════════════════════════════════════
+       S03 — THE CHALLENGE · Dark + bg image
+  ══════════════════════════════════════════════════════════ -->
+  <section
+    class="s-challenge section-bg"
+    id="challenge"
+    data-section="03"
+    style="background-image: url('assets/images/additional%20images/basecamp-add-1.jpg');"
+  >
     <div class="section-overlay" style="background: rgba(12,15,10,0.82);"></div>
-    <div class="container section-bg-content">
-      <div class="section-counter reveal">
-        <span class="counter-num">03</span>
-        <span class="counter-lbl">/ The Challenge</span>
+    <div class="section-sticky-bar section-sticky-bar--img">
+      <div class="container">
+        <div class="section-counter">
+          <span class="counter-num">03</span>
+          <span class="counter-sep">/</span>
+          <span class="counter-lbl">The Challenge</span>
+        </div>
       </div>
-      <h2 class="display-heading centered reveal">
-        A World-Class Experience<br>Hidden Behind a Broken Website
+    </div>
+    <div class="container section-bg-content section-pad">
+      <h2 class="display-heading centered js-word-split reveal">
+        A World-Class Experience Hidden Behind a Broken Website
       </h2>
       <p class="section-intro centered reveal" data-delay="1">
         The gap between Basecamp Explorer's on-the-ground product and their online
-        presence was stark. Their existing site had a non-functional booking engine,
-        a backend that was difficult to manage, and a UI that simply didn't communicate
-        the exclusivity of what they offered.
+        presence was stark — four core business problems made a rebuild unavoidable.
       </p>
-
       <div class="problem-grid">
         <div class="problem-card problem-card--dark reveal" data-delay="1">
           <div class="problem-num">01</div>
@@ -233,152 +303,246 @@
         <div class="problem-card problem-card--dark reveal" data-delay="3">
           <div class="problem-num">03</div>
           <h3>UI Below Brand Standard</h3>
-          <p>The visual design and user experience failed to communicate the premium,
-          exclusive nature of Basecamp Explorer's product. The website looked ordinary.
-          The experience was anything but.</p>
+          <p>The visual design failed to communicate the premium, exclusive nature of
+          Basecamp Explorer's product. The website looked ordinary. The experience
+          was anything but.</p>
         </div>
         <div class="problem-card problem-card--dark reveal" data-delay="4">
           <div class="problem-num">04</div>
           <h3>No Lead Generation Path</h3>
           <p>With no proper contact flow or call-to-action architecture, the site was
-          generating awareness but failing to convert any of it into qualified leads
-          for the sales team.</p>
+          generating awareness but failing to convert any of it into qualified leads.</p>
         </div>
       </div>
     </div>
   </section>
 
+  <!-- Marquee 4 → right -->
+  <div class="marquee-divider" data-direction="right">
+    <div class="marquee-track">
+      <span class="marquee-text">Arctic · Svalbard · Norway · Kilowott · Basecamp Explorer · </span>
+      <span class="marquee-text" aria-hidden="true">Arctic · Svalbard · Norway · Kilowott · Basecamp Explorer · </span>
+      <span class="marquee-text" aria-hidden="true">Arctic · Svalbard · Norway · Kilowott · Basecamp Explorer · </span>
+    </div>
+  </div>
 
-  <!-- ============================================================
-       S05 SEO AUDIT DATA — Dark (bg-section)
-       ============================================================ -->
-  <section class="s-audit section-bg" id="audit">
-    <div class="container">
-      <div class="audit-label reveal">Digital Audit · Before Kilowott</div>
-      <p class="audit-intro reveal" data-delay="1">The numbers told a story the site couldn't.</p>
+  <!-- ══════════════════════════════════════════════════════════
+       S04 — SEO AUDIT · Dark (bg-section) — Dramatic reveal
+  ══════════════════════════════════════════════════════════ -->
+  <section class="s-audit" id="audit" data-section="04">
+    <div class="section-sticky-bar section-sticky-bar--section">
+      <div class="container">
+        <div class="section-counter">
+          <span class="audit-eyebrow">Digital Audit · Before Kilowott</span>
+        </div>
+      </div>
+    </div>
+    <div class="container section-pad">
+      <p class="audit-intro reveal">The numbers told a story the site couldn't.</p>
 
-      <div class="metrics-grid">
-        <div class="metric-card reveal" data-delay="1">
-          <div class="metric-number metric-bad">31</div>
-          <div class="metric-label">Domain Authority Score</div>
-          <div class="metric-note">Weak domain credibility. Industry benchmark: 50+.</div>
+      <div class="metrics-reveal">
+        <div class="metric-row reveal" data-delay="1">
+          <div class="metric-main">
+            <div class="metric-number metric-bad">31</div>
+            <div class="metric-info">
+              <div class="metric-label">Domain Authority Score</div>
+              <div class="metric-note">Industry benchmark: 50+</div>
+            </div>
+          </div>
+          <div class="metric-main metric-main--offset">
+            <div class="metric-number metric-bad">34<span class="metric-unit">/100</span></div>
+            <div class="metric-info">
+              <div class="metric-label">Mobile Performance</div>
+              <div class="metric-note">Top-10% sites score 92+</div>
+            </div>
+          </div>
         </div>
-        <div class="metric-card reveal" data-delay="2">
-          <div class="metric-number metric-bad">34/100</div>
-          <div class="metric-label">Mobile Performance Score</div>
-          <div class="metric-note">Critically low. Top-10% websites score 92+.</div>
+
+        <div class="metric-divider"></div>
+
+        <div class="metric-row reveal" data-delay="2">
+          <div class="metric-main">
+            <div class="metric-number metric-bad">−2.61<span class="metric-unit">%</span></div>
+            <div class="metric-info">
+              <div class="metric-label">Organic Traffic Trend</div>
+              <div class="metric-note">Declining year-on-year</div>
+            </div>
+          </div>
+          <div class="metric-main metric-main--offset">
+            <div class="metric-number metric-bad">5<span class="metric-unit">%</span></div>
+            <div class="metric-info">
+              <div class="metric-label">Traffic Share</div>
+              <div class="metric-note">Competitor fjordtours.com holds 90%</div>
+            </div>
+          </div>
         </div>
-        <div class="metric-card reveal" data-delay="3">
-          <div class="metric-number metric-bad">−2.61%</div>
-          <div class="metric-label">Organic Traffic Trend</div>
-          <div class="metric-note">Declining year-on-year. Growth had stalled.</div>
+
+        <div class="metric-divider"></div>
+
+        <div class="metric-row reveal" data-delay="3">
+          <div class="metric-main">
+            <div class="metric-number metric-bad">242</div>
+            <div class="metric-info">
+              <div class="metric-label">Pages Missing Meta Descriptions</div>
+              <div class="metric-note">Of ~500 pages crawled</div>
+            </div>
+          </div>
+          <div class="metric-main metric-main--offset">
+            <div class="metric-number metric-bad">99<span class="metric-unit">%</span></div>
+            <div class="metric-info">
+              <div class="metric-label">Traffic from Norway Only</div>
+              <div class="metric-note">Zero international reach</div>
+            </div>
+          </div>
         </div>
-        <div class="metric-card reveal" data-delay="4">
-          <div class="metric-number metric-bad">5%</div>
-          <div class="metric-label">Traffic Share</div>
-          <div class="metric-note">Their main competitor fjordtours.com holds 90%.</div>
-        </div>
-        <div class="metric-card reveal" data-delay="1">
-          <div class="metric-number metric-bad">242</div>
-          <div class="metric-label">Pages Missing Meta Descriptions</div>
-          <div class="metric-note">Of approximately 500 pages crawled.</div>
-        </div>
-        <div class="metric-card reveal" data-delay="2">
-          <div class="metric-number metric-bad">99%</div>
-          <div class="metric-label">Traffic from Norway Only</div>
-          <div class="metric-note">Zero meaningful international reach.</div>
-        </div>
-        <div class="metric-card reveal" data-delay="3">
-          <div class="metric-number metric-bad">4.6%</div>
-          <div class="metric-label">Transactional Keywords</div>
-          <div class="metric-note">Most traffic was informational — visitors, not buyers.</div>
-        </div>
-        <div class="metric-card reveal" data-delay="4">
-          <div class="metric-number metric-bad">18</div>
-          <div class="metric-label">Referring Domains</div>
-          <div class="metric-note">Main competitors have 1,800+.</div>
+
+        <div class="metric-divider"></div>
+
+        <div class="metric-row reveal" data-delay="4">
+          <div class="metric-main">
+            <div class="metric-number metric-bad">4.6<span class="metric-unit">%</span></div>
+            <div class="metric-info">
+              <div class="metric-label">Transactional Keywords</div>
+              <div class="metric-note">Most traffic was informational</div>
+            </div>
+          </div>
+          <div class="metric-main metric-main--offset">
+            <div class="metric-number metric-bad">18</div>
+            <div class="metric-info">
+              <div class="metric-label">Referring Domains</div>
+              <div class="metric-note">Competitors: 1,800+</div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
   </section>
 
+  <!-- Marquee 5 → left -->
+  <div class="marquee-divider" data-direction="left">
+    <div class="marquee-track">
+      <span class="marquee-text">Arctic · Svalbard · Norway · Kilowott · Basecamp Explorer · </span>
+      <span class="marquee-text" aria-hidden="true">Arctic · Svalbard · Norway · Kilowott · Basecamp Explorer · </span>
+      <span class="marquee-text" aria-hidden="true">Arctic · Svalbard · Norway · Kilowott · Basecamp Explorer · </span>
+    </div>
+  </div>
 
-  <!-- ============================================================
-       S06 THE PITCH / QUOTE — Dark
-       ============================================================ -->
-  <section class="s-pitch section-bg-img" id="pitch" style="background-image: url('assets/images/Svalbard feb2025-4.jpg');">
-    <div class="section-overlay" style="background: rgba(12,15,10,0.78);"></div>
-    <div class="container section-bg-content">
-      <div class="section-counter reveal">
-        <span class="counter-num">04</span>
-        <span class="counter-lbl">/ How We Won</span>
+  <!-- ══════════════════════════════════════════════════════════
+       S05 — THE PITCH · Dark — Curtain shutter cards
+  ══════════════════════════════════════════════════════════ -->
+  <section class="s-pitch section-dark transition-bottom-light" id="pitch" data-section="05">
+    <div class="section-sticky-bar section-sticky-bar--dark">
+      <div class="container">
+        <div class="section-counter">
+          <span class="counter-num">05</span>
+          <span class="counter-sep">/</span>
+          <span class="counter-lbl">How We Won</span>
+        </div>
       </div>
-      <h2 class="display-heading reveal">
-        We Didn't Just Send a Proposal.<br>We Sent Proof.
+    </div>
+    <div class="container section-pad">
+      <h2 class="display-heading js-word-split reveal">
+        We Didn't Just Send a Proposal. We Sent Proof.
       </h2>
       <p class="section-intro reveal" data-delay="1">
         Kilowott entered the competitive pitch process differently. Before a single
-        contract was signed, we had already done the work — conducting a full SEO audit
-        of their existing site, building two working prototypes, and developing a proposal
-        that demonstrated a genuine understanding of Basecamp Explorer's business, not
-        just their brief. The competition sent decks. We sent proof.
+        contract was signed, we had already done the work — conducting a full SEO audit,
+        building two working prototypes, and developing a proposal that demonstrated
+        genuine understanding of Basecamp Explorer's business. The competition sent decks.
+        We sent proof.
       </p>
 
-      <div class="proof-grid-wrap" style="background-image: url('assets/images/230304 base camp-2.jpg');">
-        <div class="proof-grid">
-          <div class="proof-card reveal" data-delay="1">
-            <div class="proof-num">01</div>
+      <div class="curtain-grid">
+        <!-- Card 1 -->
+        <div class="curtain-card">
+          <div class="curtain-text-layer">
+            <span class="curtain-num">01</span>
             <h3>Full SEO Audit</h3>
             <p>Delivered before engagement. A comprehensive analysis identifying every
             technical, content, and competitive gap in their existing digital presence.</p>
           </div>
-          <div class="proof-card reveal" data-delay="2">
-            <div class="proof-num">02</div>
+          <div class="curtain-image-layer">
+            <img src="assets/images/additional%20images/basecamp-add-2.jpg" alt="" draggable="false">
+          </div>
+        </div>
+        <!-- Card 2 -->
+        <div class="curtain-card">
+          <div class="curtain-text-layer">
+            <span class="curtain-num">02</span>
             <h3>Two Working Prototypes</h3>
             <p>Not wireframes. Not mockups. Interactive prototypes showing exactly what
             the new site could feel and function like — before any contract was signed.</p>
           </div>
-          <div class="proof-card reveal" data-delay="3">
-            <div class="proof-num">03</div>
+          <div class="curtain-image-layer">
+            <img src="assets/images/additional%20images/basecamp-add-6.jpg" alt="" draggable="false">
+          </div>
+        </div>
+        <!-- Card 3 -->
+        <div class="curtain-card">
+          <div class="curtain-text-layer">
+            <span class="curtain-num">03</span>
             <h3>Business-First Thinking</h3>
             <p>We understood the complexity: mandatory guided experiences, polar bear
             safety requirements, agent portals, bespoke itineraries. Our proposal
             spoke their language.</p>
           </div>
-          <div class="proof-card reveal" data-delay="4">
-            <div class="proof-num">04</div>
+          <div class="curtain-image-layer">
+            <img src="assets/images/additional%20images/basecamp-add-10.jpg" alt="" draggable="false">
+          </div>
+        </div>
+        <!-- Card 4 -->
+        <div class="curtain-card">
+          <div class="curtain-text-layer">
+            <span class="curtain-num">04</span>
             <h3>Competitive Pricing</h3>
             <p>We came in significantly below market rate — not by cutting corners,
-            but through operational efficiency and genuine commitment to the
-            partnership.</p>
+            but through operational efficiency and genuine commitment to the partnership.</p>
+          </div>
+          <div class="curtain-image-layer">
+            <img src="assets/images/additional%20images/basecamp-add-4.jpg" alt="" draggable="false">
           </div>
         </div>
       </div>
     </div>
   </section>
 
+  <!-- Marquee 6 → right -->
+  <div class="marquee-divider" data-direction="right">
+    <div class="marquee-track">
+      <span class="marquee-text">Arctic · Svalbard · Norway · Kilowott · Basecamp Explorer · </span>
+      <span class="marquee-text" aria-hidden="true">Arctic · Svalbard · Norway · Kilowott · Basecamp Explorer · </span>
+      <span class="marquee-text" aria-hidden="true">Arctic · Svalbard · Norway · Kilowott · Basecamp Explorer · </span>
+    </div>
+  </div>
 
-  <!-- ============================================================
-       S07 SOLUTION: WEBSITE — Light + dark strip inside
-       ============================================================ -->
-  <section class="s-solution" id="solution">
+  <!-- ══════════════════════════════════════════════════════════
+       S06 — SOLUTION
+       Part A: Light (headline + philosophy)
+       Part B: Dark video strip (accordion)
+       Part C: Light (tech + before/after toggle)
+  ══════════════════════════════════════════════════════════ -->
+  <section class="s-solution" id="solution" data-section="06">
 
-    <!-- Part A: Light — headline + timeline -->
+    <!-- Part A: Light -->
     <div class="solution-light">
-      <div class="container">
-        <div class="section-counter reveal">
-          <span class="counter-num">05</span>
-          <span class="counter-lbl">/ The Solution</span>
+      <div class="section-sticky-bar section-sticky-bar--light">
+        <div class="container">
+          <div class="section-counter">
+            <span class="counter-num">06</span>
+            <span class="counter-sep">/</span>
+            <span class="counter-lbl">The Solution</span>
+          </div>
         </div>
-        <h2 class="display-heading display-dark reveal">
-          Building a Website<br>Worthy of Svalbard
+      </div>
+      <div class="container section-pad-top">
+        <h2 class="display-heading display-dark js-word-split reveal">
+          Building a Website Worthy of Svalbard
         </h2>
         <p class="section-intro muted reveal" data-delay="1">
           The brief was clear: build something that sells the feeling of Svalbard, not
           a list of products. The new site needed to be immersive, lead-generating, and
           scalable — a platform that grows with the business.
         </p>
-
         <div class="design-philosophy reveal" data-delay="2">
           <div class="philosophy-accent"></div>
           <div class="philosophy-content">
@@ -386,75 +550,129 @@
             <p>The experience Basecamp Explorer sells — armed guides, glacier access, remote
             wilderness lodges — is not a product you browse and buy. It is a conversation.
             A relationship. A decision that begins with awe and ends with a phone call.</p>
-            <p>That truth shaped every design decision.</p>
             <p>The new site was built not to close a sale, but to earn one. Full-viewport
-            imagery, minimal UI chrome, and narrative-led layouts were chosen deliberately
-            — to immerse the visitor in the feeling of Svalbard before a single feature
-            or price point appears. The design gets out of the way and lets the destination
-            do the selling.</p>
-            <p>Every page leads somewhere intentional. The inquiry form is not buried — it
-            is the natural conclusion of a journey the site takes you on. The call-to-action
-            architecture is built around one conversion event: a qualified lead picking up
-            the phone.</p>
+            imagery, minimal UI chrome, and narrative-led layouts were chosen deliberately —
+            to immerse the visitor in the feeling of Svalbard before a single feature
+            appears. The design gets out of the way and lets the destination do the selling.</p>
             <p>This is not an e-commerce site. It is a digital expedition briefing.</p>
           </div>
         </div>
       </div>
     </div>
 
-    <!-- Part B: Dark strip — feature grid -->
-    <div class="solution-dark section-bg-img" style="background-image: url('assets/images/basecamp-explorer-hotel-9.jpg');">
-      <div class="section-overlay" style="background: rgba(12,15,10,0.88);"></div>
-      <div class="container section-bg-content">
+    <!-- Part B: Dark video strip — accordion -->
+    <div class="solution-dark" id="solution-dark">
+      <video autoplay muted loop playsinline class="section-video-bg">
+        <source src="assets/videos/the-solution.mp4" type="video/mp4">
+      </video>
+      <div class="solution-dark-overlay"></div>
+      <div class="container section-bg-content solution-dark-inner">
         <div class="solution-dark-label reveal">What We Built</div>
-        <div class="features-grid">
-          <div class="feature-item reveal" data-delay="1">
-            <h4>Video Hero Homepage</h4>
-            <p>Full-viewport atmospheric video intro with Svalbard footage and
-            storytelling overlays — sells the destination, not the product.</p>
+        <div class="feature-accordion" id="feature-accordion">
+
+          <div class="accordion-item reveal" data-delay="1">
+            <button class="accordion-trigger" aria-expanded="false">
+              <span class="accordion-num">01</span>
+              <span class="accordion-title">Video Hero Homepage</span>
+              <span class="accordion-icon" aria-hidden="true"></span>
+            </button>
+            <div class="accordion-body">
+              <p>Full-viewport atmospheric video intro with Svalbard footage — sells the
+              destination, not the product.</p>
+            </div>
           </div>
-          <div class="feature-item reveal" data-delay="2">
-            <h4>Three Lodge Pages</h4>
-            <p>Dedicated immersive pages for Isfjord Radio, Nordenskiöld Lodge,
-            and Basecamp Hotel — each with rich storytelling layouts.</p>
+
+          <div class="accordion-item reveal" data-delay="2">
+            <button class="accordion-trigger" aria-expanded="false">
+              <span class="accordion-num">02</span>
+              <span class="accordion-title">Three Lodge Pages</span>
+              <span class="accordion-icon" aria-hidden="true"></span>
+            </button>
+            <div class="accordion-body">
+              <p>Dedicated immersive pages for Isfjord Radio, Nordenskiöld Lodge, and
+              Basecamp Hotel — each with rich storytelling layouts and full-bleed photography.</p>
+            </div>
           </div>
-          <div class="feature-item reveal" data-delay="3">
-            <h4>Tours &amp; Experiences</h4>
-            <p>Seasonal activity overview (winter/summer/autumn) with images,
-            maps, and narrative-led copy tied to each of the three lodges.</p>
+
+          <div class="accordion-item reveal" data-delay="3">
+            <button class="accordion-trigger" aria-expanded="false">
+              <span class="accordion-num">03</span>
+              <span class="accordion-title">Tours &amp; Experiences</span>
+              <span class="accordion-icon" aria-hidden="true"></span>
+            </button>
+            <div class="accordion-body">
+              <p>Seasonal activity overview — winter, summer, autumn — with images, maps,
+              and narrative-led copy tied to each of the three lodges.</p>
+            </div>
           </div>
-          <div class="feature-item reveal" data-delay="4">
-            <h4>Multi-Step Inquiry Form</h4>
-            <p>GDPR-compliant contact flow capturing inquiry type, number of
-            guests, travel period, and the page or itinerary of origin.</p>
+
+          <div class="accordion-item reveal" data-delay="4">
+            <button class="accordion-trigger" aria-expanded="false">
+              <span class="accordion-num">04</span>
+              <span class="accordion-title">Multi-Step Inquiry Form</span>
+              <span class="accordion-icon" aria-hidden="true"></span>
+            </button>
+            <div class="accordion-body">
+              <p>GDPR-compliant contact flow capturing inquiry type, number of guests,
+              travel period, and the page or itinerary of origin.</p>
+            </div>
           </div>
-          <div class="feature-item reveal" data-delay="1">
-            <h4>Agent Portal</h4>
-            <p>Secure login for authorised travel agents. Access to image bank
-            (folders: Activities, Accommodation, Svalbard) and itinerary PDFs.</p>
+
+          <div class="accordion-item reveal" data-delay="1">
+            <button class="accordion-trigger" aria-expanded="false">
+              <span class="accordion-num">05</span>
+              <span class="accordion-title">Agent Portal</span>
+              <span class="accordion-icon" aria-hidden="true"></span>
+            </button>
+            <div class="accordion-body">
+              <p>Secure login for authorised travel agents — image bank access (Activities,
+              Accommodation, Svalbard) and downloadable itinerary PDFs.</p>
+            </div>
           </div>
-          <div class="feature-item reveal" data-delay="2">
-            <h4>AI Chatbot (Skilly)</h4>
-            <p>Integrated conversational AI for site-wide search and high-intent
-            lead capture, with customisable tone and personality settings.</p>
+
+          <div class="accordion-item reveal" data-delay="2">
+            <button class="accordion-trigger" aria-expanded="false">
+              <span class="accordion-num">06</span>
+              <span class="accordion-title">AI Chatbot (Skilly)</span>
+              <span class="accordion-icon" aria-hidden="true"></span>
+            </button>
+            <div class="accordion-body">
+              <p>Integrated conversational AI for site-wide search and high-intent lead
+              capture, with customisable tone and personality settings.</p>
+            </div>
           </div>
-          <div class="feature-item reveal" data-delay="3">
-            <h4>Bilingual Support</h4>
-            <p>Full English and Norwegian versions via TranslatePress, with a
-            scalable foundation for additional languages in future.</p>
+
+          <div class="accordion-item reveal" data-delay="3">
+            <button class="accordion-trigger" aria-expanded="false">
+              <span class="accordion-num">07</span>
+              <span class="accordion-title">Bilingual Support</span>
+              <span class="accordion-icon" aria-hidden="true"></span>
+            </button>
+            <div class="accordion-body">
+              <p>Full English and Norwegian versions via TranslatePress, with a scalable
+              foundation for additional languages as the brand grows internationally.</p>
+            </div>
           </div>
-          <div class="feature-item reveal" data-delay="4">
-            <h4>Fully Responsive</h4>
-            <p>Optimised across all devices from 320px mobile to 1920px desktop,
-            meeting Level A accessibility standards (ADA/WCAG).</p>
+
+          <div class="accordion-item reveal" data-delay="4">
+            <button class="accordion-trigger" aria-expanded="false">
+              <span class="accordion-num">08</span>
+              <span class="accordion-title">Fully Responsive</span>
+              <span class="accordion-icon" aria-hidden="true"></span>
+            </button>
+            <div class="accordion-body">
+              <p>Optimised from 320px mobile to 1920px desktop — meeting Level A
+              accessibility standards (ADA/WCAG).</p>
+            </div>
           </div>
+
         </div>
       </div>
     </div>
 
-    <!-- Part C + D: Light — tech stack + device mockups -->
+    <!-- Part C: Light — tech stack + screenshots + before/after toggle -->
     <div class="solution-bottom">
-      <div class="container">
+      <div class="container section-pad-sm">
         <div class="tech-label reveal">Tech Stack</div>
         <div class="tech-stack reveal" data-delay="1">
           <span class="tech-pill">WordPress CMS</span>
@@ -469,32 +687,81 @@
           <span class="tech-pill">Skilly AI</span>
         </div>
 
-        <div class="device-mockups reveal" data-delay="2">
-          <div class="mockup-desktop">
-            <img src="assets/basecamp-website-screenshots/basecamp website desktop screenshot.png" alt="Basecamp Explorer — Desktop">
-            <span class="mockup-caption">Basecamp Explorer · Desktop</span>
+        <!-- Before/After site toggle -->
+        <div class="site-toggle-wrap reveal" data-delay="2">
+          <div class="site-toggle-heading">
+            <span class="site-toggle-eyebrow">Visual Transformation</span>
+            <p class="site-toggle-hint">Drag to compare</p>
           </div>
-          <div class="mockup-mobile">
-            <img src="assets/basecamp-website-screenshots/basecamp website mobile screenshot.jpeg" alt="Basecamp Explorer — Mobile">
-            <span class="mockup-caption">Basecamp Explorer · Mobile</span>
+          <div class="site-toggle" id="site-toggle">
+            <div class="site-toggle__before">
+              <img src="assets/basecamp-website-screenshots/basecamp website desktop screenshot.png"
+                   alt="Before Kilowott" draggable="false">
+            </div>
+            <div class="site-toggle__after">
+              <img src="assets/basecamp-website-screenshots/basecamp website desktop screenshot-updated.png"
+                   alt="After Kilowott" draggable="false">
+            </div>
+            <div class="site-toggle__handle" id="site-toggle-handle">
+              <div class="site-toggle__line"></div>
+              <div class="site-toggle__grip">
+                <svg width="18" height="18" viewBox="0 0 18 18" fill="none" aria-hidden="true">
+                  <path d="M6 4L1 9L6 14M12 4L17 9L12 14"
+                        stroke="currentColor" stroke-width="1.5"
+                        stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </div>
+            </div>
+            <div class="site-toggle__label site-toggle__label--before">Before</div>
+            <div class="site-toggle__label site-toggle__label--after">After</div>
           </div>
+        </div>
+
+        <!-- Desktop screenshot -->
+        <div class="mockup-desktop reveal" data-delay="3"
+             style="display:block; margin:20px auto 0 auto; max-width:800px; width:100%;">
+          <img class="img-reveal"
+               src="assets/basecamp-website-screenshots/basecamp website desktop screenshot-updated.png"
+               alt="Basecamp Explorer — Desktop"
+               style="width:100%; height:auto; display:block;">
+          <span class="mockup-caption">Desktop</span>
         </div>
       </div>
     </div>
   </section>
 
+  <!-- Marquee 7 → left -->
+  <div class="marquee-divider" data-direction="left">
+    <div class="marquee-track">
+      <span class="marquee-text">Arctic · Svalbard · Norway · Kilowott · Basecamp Explorer · </span>
+      <span class="marquee-text" aria-hidden="true">Arctic · Svalbard · Norway · Kilowott · Basecamp Explorer · </span>
+      <span class="marquee-text" aria-hidden="true">Arctic · Svalbard · Norway · Kilowott · Basecamp Explorer · </span>
+    </div>
+  </div>
 
-  <!-- ============================================================
-       S08 SEO & GEO STRATEGY — Dark (bg-section)
-       ============================================================ -->
-  <section class="s-seo section-bg-img" id="seo" style="background-image: url('assets/images/230304 base camp-11.jpg');">
+  <!-- ══════════════════════════════════════════════════════════
+       S07 — SEO & GEO STRATEGY · Dark + bg image
+  ══════════════════════════════════════════════════════════ -->
+  <section
+    class="s-seo section-bg transition-bottom-light"
+    id="seo"
+    data-section="07"
+    style="background-image: url('assets/images/additional%20images/basecamp-add-3.jpg');"
+  >
     <div class="section-overlay" style="background: rgba(12,15,10,0.80);"></div>
-    <div class="container section-bg-content">
-      <div class="section-counter reveal">
-        <span class="counter-num">06</span>
-        <span class="counter-lbl">/ SEO &amp; GEO Strategy</span>
+    <div class="section-sticky-bar section-sticky-bar--img">
+      <div class="container">
+        <div class="section-counter">
+          <span class="counter-num">07</span>
+          <span class="counter-sep">/</span>
+          <span class="counter-lbl">SEO &amp; GEO Strategy</span>
+        </div>
       </div>
-      <h2 class="display-heading reveal">From Invisible to Discoverable — Globally</h2>
+    </div>
+    <div class="container section-bg-content section-pad">
+      <h2 class="display-heading js-word-split reveal">
+        From Invisible to Discoverable — Globally
+      </h2>
       <p class="section-intro reveal" data-delay="1">
         The website rebuild alone wasn't enough. Basecamp Explorer needed a digital
         strategy that would take them from a 5% traffic share to a genuine international
@@ -502,52 +769,58 @@
       </p>
 
       <div class="ba-grid">
-        <div class="ba-card reveal" data-delay="1">
+        <div class="ba-card reveal" data-delay="1"
+             data-ba-before="31" data-ba-after="50" data-ba-suffix="+">
           <div class="ba-label">Authority Score</div>
           <div class="ba-numbers">
-            <span class="ba-before">31</span>
+            <span class="ba-before-num">31</span>
             <span class="ba-arrow">→</span>
-            <span class="ba-after">50+</span>
+            <span class="ba-after-num">50+</span>
           </div>
         </div>
-        <div class="ba-card reveal" data-delay="2">
+        <div class="ba-card reveal" data-delay="2"
+             data-ba-before="34" data-ba-after="90" data-ba-suffix="+">
           <div class="ba-label">Mobile Performance</div>
           <div class="ba-numbers">
-            <span class="ba-before">34</span>
+            <span class="ba-before-num">34</span>
             <span class="ba-arrow">→</span>
-            <span class="ba-after">90+</span>
+            <span class="ba-after-num">90+</span>
           </div>
         </div>
-        <div class="ba-card reveal" data-delay="3">
+        <div class="ba-card reveal" data-delay="3"
+             data-ba-before="332" data-ba-after="1000" data-ba-suffix="+">
           <div class="ba-label">Organic Keywords</div>
           <div class="ba-numbers">
-            <span class="ba-before">332</span>
+            <span class="ba-before-num">332</span>
             <span class="ba-arrow">→</span>
-            <span class="ba-after">1,000+</span>
+            <span class="ba-after-num">1,000+</span>
           </div>
         </div>
-        <div class="ba-card reveal" data-delay="1">
+        <div class="ba-card reveal" data-delay="1"
+             data-ba-before="1" data-ba-after="20" data-ba-suffix="%+">
           <div class="ba-label">International Traffic</div>
           <div class="ba-numbers">
-            <span class="ba-before">1%</span>
+            <span class="ba-before-num">1%</span>
             <span class="ba-arrow">→</span>
-            <span class="ba-after">20%+</span>
+            <span class="ba-after-num">20%+</span>
           </div>
         </div>
-        <div class="ba-card reveal" data-delay="2">
+        <div class="ba-card reveal" data-delay="2"
+             data-ba-before="242" data-ba-after="0" data-ba-suffix="">
           <div class="ba-label">Missing Meta Descriptions</div>
           <div class="ba-numbers">
-            <span class="ba-before">242</span>
+            <span class="ba-before-num">242</span>
             <span class="ba-arrow">→</span>
-            <span class="ba-after">0</span>
+            <span class="ba-after-num">0</span>
           </div>
         </div>
-        <div class="ba-card reveal" data-delay="3">
+        <div class="ba-card reveal" data-delay="3"
+             data-ba-before="18" data-ba-after="100" data-ba-suffix="+">
           <div class="ba-label">Referring Domains</div>
           <div class="ba-numbers">
-            <span class="ba-before">18</span>
+            <span class="ba-before-num">18</span>
             <span class="ba-arrow">→</span>
-            <span class="ba-after">100+</span>
+            <span class="ba-after-num">100+</span>
           </div>
         </div>
       </div>
@@ -555,31 +828,41 @@
       <div class="geo-callout reveal" data-delay="2">
         <div class="geo-eyebrow">Beyond Google</div>
         <h3>Generative Engine Optimisation (GEO)</h3>
-        <p>We also optimised Basecamp Explorer's brand presence for AI-driven
-        search platforms — ChatGPT, Perplexity, and Google's AI Overviews. As
-        high-value travellers increasingly use AI assistants to research and plan
-        premium trips, being accurately represented in those answers is no longer
-        optional. Our GEO work includes structured data implementation (JSON-LD),
-        entity building, knowledge panel optimisation, and AI-friendly content
-        formatting across FAQs, guides, and structured summaries.</p>
+        <p>We optimised Basecamp Explorer's brand presence for AI-driven search platforms —
+        ChatGPT, Perplexity, and Google's AI Overviews. As high-value travellers increasingly
+        use AI to research premium trips, being accurately represented in those answers is no
+        longer optional. Our GEO work includes structured data (JSON-LD), entity building,
+        knowledge panel optimisation, and AI-friendly content formatting.</p>
       </div>
-
     </div>
   </section>
 
+  <!-- Marquee 8 → right -->
+  <div class="marquee-divider" data-direction="right">
+    <div class="marquee-track">
+      <span class="marquee-text">Arctic · Svalbard · Norway · Kilowott · Basecamp Explorer · </span>
+      <span class="marquee-text" aria-hidden="true">Arctic · Svalbard · Norway · Kilowott · Basecamp Explorer · </span>
+      <span class="marquee-text" aria-hidden="true">Arctic · Svalbard · Norway · Kilowott · Basecamp Explorer · </span>
+    </div>
+  </div>
 
-  <!-- ============================================================
-       S09 RESULTS — Light
-       ============================================================ -->
-  <section class="s-results section-light" id="results">
-    <div class="container">
-      <div class="section-counter reveal">
-        <span class="counter-num">07</span>
-        <span class="counter-lbl">/ The Outcome</span>
+  <!-- ══════════════════════════════════════════════════════════
+       S08 — RESULTS · Light
+  ══════════════════════════════════════════════════════════ -->
+  <section class="s-results section-light transition-bottom-dark" id="results" data-section="08">
+    <div class="section-sticky-bar section-sticky-bar--light">
+      <div class="container">
+        <div class="section-counter">
+          <span class="counter-num">08</span>
+          <span class="counter-sep">/</span>
+          <span class="counter-lbl">The Outcome</span>
+        </div>
       </div>
+    </div>
+    <div class="container section-pad">
       <div class="results-header">
-        <h2 class="display-heading display-dark reveal">
-          The Journey North<br>Has Begun
+        <h2 class="display-heading display-dark js-word-split reveal">
+          The Journey North Has Begun
         </h2>
         <div class="status-badge reveal" data-delay="1">
           <span class="status-dot"></span>
@@ -594,40 +877,58 @@
 
       <div class="results-grid">
         <div class="result-card reveal" data-delay="1">
-          <div class="result-from">31</div>
-          <div class="result-arrow">→</div>
-          <div class="result-to">50+</div>
+          <div class="result-metric">
+            <div class="result-from">31</div>
+            <div class="result-arrow">→</div>
+            <div class="result-to">50+</div>
+          </div>
           <div class="result-label">Authority Score</div>
+          <div class="result-bar"><div class="result-bar-fill" data-progress="62"></div></div>
         </div>
         <div class="result-card reveal" data-delay="2">
-          <div class="result-from">34</div>
-          <div class="result-arrow">→</div>
-          <div class="result-to">90+</div>
+          <div class="result-metric">
+            <div class="result-from">34</div>
+            <div class="result-arrow">→</div>
+            <div class="result-to">90+</div>
+          </div>
           <div class="result-label">Mobile Performance</div>
+          <div class="result-bar"><div class="result-bar-fill" data-progress="38"></div></div>
         </div>
         <div class="result-card reveal" data-delay="3">
-          <div class="result-from">332</div>
-          <div class="result-arrow">→</div>
-          <div class="result-to">1,000+</div>
+          <div class="result-metric">
+            <div class="result-from">332</div>
+            <div class="result-arrow">→</div>
+            <div class="result-to">1,000+</div>
+          </div>
           <div class="result-label">Organic Keywords</div>
+          <div class="result-bar"><div class="result-bar-fill" data-progress="33"></div></div>
         </div>
         <div class="result-card reveal" data-delay="1">
-          <div class="result-from">1%</div>
-          <div class="result-arrow">→</div>
-          <div class="result-to">20%+</div>
+          <div class="result-metric">
+            <div class="result-from">1%</div>
+            <div class="result-arrow">→</div>
+            <div class="result-to">20%+</div>
+          </div>
           <div class="result-label">International Traffic</div>
+          <div class="result-bar"><div class="result-bar-fill" data-progress="5"></div></div>
         </div>
         <div class="result-card reveal" data-delay="2">
-          <div class="result-from">242</div>
-          <div class="result-arrow">→</div>
-          <div class="result-to">0</div>
+          <div class="result-metric">
+            <div class="result-from">242</div>
+            <div class="result-arrow">→</div>
+            <div class="result-to">0</div>
+          </div>
           <div class="result-label">Missing Meta Descriptions</div>
+          <div class="result-bar"><div class="result-bar-fill" data-progress="20"></div></div>
         </div>
         <div class="result-card reveal" data-delay="3">
-          <div class="result-from">18</div>
-          <div class="result-arrow">→</div>
-          <div class="result-to">100+</div>
+          <div class="result-metric">
+            <div class="result-from">18</div>
+            <div class="result-arrow">→</div>
+            <div class="result-to">100+</div>
+          </div>
           <div class="result-label">Referring Domains</div>
+          <div class="result-bar"><div class="result-bar-fill" data-progress="18"></div></div>
         </div>
       </div>
 
@@ -639,28 +940,25 @@
     </div>
   </section>
 
-
-  <!-- ============================================================
-       S10 CLOSE — Dark, minimal
-       ============================================================ -->
-  <section class="s-close section-dark" id="close">
-    <div class="container">
+  <!-- ══════════════════════════════════════════════════════════
+       S09 — CLOSE · Cinematic footer — single section
+       Background: footer-image.jpg, overlay 0.65
+  ══════════════════════════════════════════════════════════ -->
+  <section class="s-close section-bg" id="close" data-section="09"
+           style="background-image: url('assets/images/footer-image.jpg');">
+    <div class="section-overlay" style="background: rgba(12,15,10,0.65);"></div>
+    <div class="close-inner section-bg-content">
       <div class="close-content">
         <img src="assets/kilowott-logo/kilowott-logo.png" alt="Kilowott" class="close-logo reveal">
         <hr class="close-rule reveal" data-delay="1">
         <p class="close-tagline reveal" data-delay="2">
           We build digital experiences that match the ambition of the brands we work with.
         </p>
-        <a
-          href="https://kilowott.com"
-          class="close-link reveal"
-          data-delay="3"
-          target="_blank"
-          rel="noopener noreferrer"
-        >kilowott.com ↗</a>
-        <div class="close-footer reveal" data-delay="4">
-          © Kilowott 2025 · Basecamp Explorer Case Study
-        </div>
+        <a href="https://kilowott.com" class="close-link reveal" data-delay="3"
+           target="_blank" rel="noopener noreferrer">kilowott.com ↗</a>
+      </div>
+      <div class="close-copyright reveal" data-delay="4">
+        © Kilowott 2025 · Basecamp Explorer Case Study
       </div>
     </div>
   </section>
