@@ -366,56 +366,7 @@
   }
 
 
-  // ══════════════════════════════════════════
-  // 12. DUAL-ROW AUTO-SCROLLING CAROUSEL
-  //     Row 1: scrolls left, Row 2: right
-  //     Base: 40px/s, hover: 8px/s
-  //     Hovered card: scale(1.05)
-  // ══════════════════════════════════════════
-  var carouselRows = document.querySelectorAll('.carousel-row');
-
-  if (carouselRows.length > 0) {
-    var carousels = [];
-    var BASE_SPEED = 40 / 60; // px per frame at 60fps
-    var HOVER_SPEED = 8 / 60;
-
-    carouselRows.forEach(function (row) {
-      var track  = row.querySelector('.carousel-track');
-      if (!track) return;
-
-      var dir    = row.getAttribute('data-carousel-dir') === 'right' ? 1 : -1;
-      var offset = dir === -1 ? 0 : -(track.scrollWidth / 2);
-      var isHovered = false;
-
-      row.addEventListener('mouseenter', function () { isHovered = true; });
-      row.addEventListener('mouseleave', function () { isHovered = false; });
-
-      carousels.push({
-        track:     track,
-        dir:       dir,
-        offset:    offset,
-        get hovered() { return isHovered; }
-      });
-    });
-
-    function animateCarousels() {
-      carousels.forEach(function (c) {
-        var speed = c.hovered ? HOVER_SPEED : BASE_SPEED;
-        var halfW = c.track.scrollWidth / 2;
-
-        c.offset += c.dir * -speed;
-
-        if (c.dir === -1 && c.offset < -halfW) c.offset += halfW;
-        if (c.dir ===  1 && c.offset > 0)       c.offset -= halfW;
-
-        c.track.style.transform = 'translateX(' + c.offset.toFixed(2) + 'px)';
-      });
-
-      raf(animateCarousels);
-    }
-
-    raf(animateCarousels);
-  }
+  // Carousel auto-scroll is now CSS-only (marquee-left / marquee-right keyframes).
 
 
   // ══════════════════════════════════════════

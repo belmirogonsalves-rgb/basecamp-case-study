@@ -4,6 +4,52 @@
    ============================================================ */
 
 /* ───────────────────────────────────────
+   FONT FACES — ABC Whyte & ABC Whyte Inktrap
+─────────────────────────────────────── */
+@font-face {
+  font-family: 'ABC Whyte';
+  src: url('assets/fonts/Whyte-Regular.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'ABC Whyte';
+  src: url('assets/fonts/Whyte-Medium.woff2') format('woff2');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'ABC Whyte';
+  src: url('assets/fonts/Whyte-Bold.woff2') format('woff2');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'ABC Whyte Inktrap';
+  src: url('assets/fonts/WhyteInktrap-Regular.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'ABC Whyte Inktrap';
+  src: url('assets/fonts/WhyteInktrap-Medium.woff2') format('woff2');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'ABC Whyte Inktrap';
+  src: url('assets/fonts/WhyteInktrap-Bold.woff2') format('woff2');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* ───────────────────────────────────────
    CUSTOM PROPERTIES
 ─────────────────────────────────────── */
 :root {
@@ -47,7 +93,7 @@
 html { scroll-behavior: smooth; }
 
 body {
-  font-family: 'DM Sans', sans-serif;
+  font-family: 'ABC Whyte', 'DM Sans', sans-serif;
   background: var(--bg-dark);
   color: var(--text-primary);
   -webkit-font-smoothing: antialiased;
@@ -273,14 +319,17 @@ button { cursor: pointer; border: none; background: none; }
 }
 
 .section-light .counter-lbl,
-.section-light .counter-sep { color: var(--text-muted); }
-.section-light .counter-num  { color: var(--amber); }
+.solution-light .counter-lbl,
+.section-light .counter-sep,
+.solution-light .counter-sep { color: var(--text-muted); }
+.section-light .counter-num,
+.solution-light .counter-num { color: var(--amber); }
 
 /* ───────────────────────────────────────
    DISPLAY HEADINGS
 ─────────────────────────────────────── */
 .display-heading {
-  font-family: 'Playfair Display', serif;
+  font-family: 'ABC Whyte Inktrap', 'Playfair Display', serif;
   font-size: clamp(34px, 5vw, 64px);
   font-weight: 400;
   line-height: 1.15;
@@ -290,6 +339,11 @@ button { cursor: pointer; border: none; background: none; }
 
 .display-heading.display-dark { color: var(--text-dark); }
 .display-heading.centered     { text-align: center; }
+
+/* Card-title headings (h3 inside curtain/problem/geo cards etc.) */
+h1, h2, h3 {
+  font-family: 'ABC Whyte Inktrap', 'Playfair Display', sans-serif;
+}
 
 .section-intro {
   font-size: 1.0625rem;
@@ -473,7 +527,7 @@ button { cursor: pointer; border: none; background: none; }
 }
 
 .hero-headline {
-  font-family: 'Playfair Display', serif;
+  font-family: 'ABC Whyte Inktrap', 'Playfair Display', serif;
   font-size: clamp(44px, 7vw, 96px);
   font-weight: 400;
   line-height: 1.07;
@@ -646,7 +700,7 @@ button { cursor: pointer; border: none; background: none; }
 }
 
 .stat-label {
-  font-family: 'DM Sans', sans-serif;
+  font-family: 'ABC Whyte', 'DM Sans', sans-serif;
   font-size: 0.8125rem;
   color: var(--text-secondary);
   line-height: 1.5;
@@ -690,8 +744,8 @@ button { cursor: pointer; border: none; background: none; }
   position: absolute;
   left: 16px;
   top: 50%;
-  transform: translateY(-50%) rotate(-90deg);
-  transform-origin: center center;
+  transform: translateY(-50%);
+  writing-mode: vertical-rl;
   color: var(--text-primary);
   font-family: 'Poppins', sans-serif;
   font-size: 11px;
@@ -701,6 +755,8 @@ button { cursor: pointer; border: none; background: none; }
   z-index: 2;
   white-space: nowrap;
   transition: opacity 0.4s ease;
+  max-height: calc(100% - 32px);
+  overflow: hidden;
 }
 
 .property-img-card:hover .card-title-vertical {
@@ -729,7 +785,7 @@ button { cursor: pointer; border: none; background: none; }
 }
 
 .card-description p {
-  font-family: 'DM Sans', sans-serif;
+  font-family: 'ABC Whyte', 'DM Sans', sans-serif;
   font-size: 14px;
   color: var(--text-primary);
   line-height: 1.6;
@@ -779,7 +835,27 @@ button { cursor: pointer; border: none; background: none; }
 .carousel-track {
   display: flex;
   gap: 12px;
+  width: max-content;
   will-change: transform;
+  animation: marquee-left 60s linear infinite;
+}
+
+.carousel-row[data-carousel-dir="right"] .carousel-track {
+  animation-name: marquee-right;
+}
+
+.carousel-row:hover .carousel-track {
+  animation-duration: 300s;
+}
+
+@keyframes marquee-left {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+
+@keyframes marquee-right {
+  from { transform: translateX(-50%); }
+  to   { transform: translateX(0); }
 }
 
 .carousel-item {
@@ -864,7 +940,7 @@ button { cursor: pointer; border: none; background: none; }
 }
 
 .audit-intro {
-  font-family: 'Playfair Display', serif;
+  font-family: 'ABC Whyte Inktrap', 'Playfair Display', serif;
   font-size: clamp(26px, 3.5vw, 44px);
   font-style: italic;
   font-weight: 400;
@@ -1129,7 +1205,7 @@ button { cursor: pointer; border: none; background: none; }
 }
 
 .accordion-title {
-  font-family: 'DM Sans', sans-serif;
+  font-family: 'ABC Whyte', 'DM Sans', sans-serif;
   font-size: clamp(15px, 1.6vw, 18px);
   font-weight: 500;
   flex: 1;
